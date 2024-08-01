@@ -171,8 +171,6 @@ const GetAllDeviceDetailsbyUserId = async (req, res) => {
           timeCreated: "$deviceDetails.timeCreated", // Include the timeCreated field from WeighingDevice
           dateUpdated: "$deviceDetails.dateUpdated", // Include the dateUpdated field from WeighingDevice
           timeUpdated: "$deviceDetails.timeUpdated", // Include the timeUpdated field from WeighingDevice
-          createdAt: "$deviceDetails.createdAt",
-          updatedAt: "$deviceDetails.updatedAt",
           deviceData: 1, // Exclude the 'deviceData' array from the final result
         },
       },
@@ -231,7 +229,7 @@ const GetAllDeviceDetails = async (req, res) => {
       },
       {
         $project: {
-          _id: 1, // Exclude the default _id field
+          _id: 1, // Include the default _id field
           title: 1, // Include the title field from WeighingDevice
           assignedProduct: 1,
           imageUrl: 1, // Include the imageUrl field from WeighingDevice
@@ -243,7 +241,12 @@ const GetAllDeviceDetails = async (req, res) => {
           timeUpdated: 1, // Include the timeUpdated field from WeighingDevice
           createdAt: 1,
           updatedAt: 1,
-          deviceData: 1, // Exclude the 'deviceData' array from the final result
+          deviceData: 1, // Include the 'deviceData' field from the final result
+        },
+      },
+      {
+        $sort: {
+          _id: 1, // Sort by _id in ascending order to ensure consistent order
         },
       },
     ]);

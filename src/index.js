@@ -45,7 +45,7 @@ app.use("/downloads", express.static("./downloads/"));
 app.get("/", (req, res) => {
   res
     .status(200)
-    .json({ success: { message: `Welcome to the xpac online production server!` } });
+    .json({ success: { message: `Welcome to the production server!` } });
 });
 
 // User route
