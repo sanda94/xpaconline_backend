@@ -11,7 +11,7 @@ const SendEmail = async ({ recipients, subject, htmlContent }) => {
     const response = await axios.post(
       "https://api.sendinblue.com/v3/smtp/email",
       {
-        sender: { name: "Xpac Scale", email: "xpacscale@gmail.com" },
+        sender: { name: "XPAC online", email: "xpaconline@xpatech.com" },
         to: recipients.map((recipient) => ({
           name: recipient.name,
           email: recipient.email,

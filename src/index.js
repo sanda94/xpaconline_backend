@@ -82,7 +82,7 @@ app.post("/api/excel/:type", async (req, res) => {
   // Columns for excel
   let columns = [
     { header: "Id", key: "id", width: 50 },
-    { header: "Title", key: "title", width: 30 },
+    { header: "Title", key: "title", width: 50 },
     { header: "Product", key: "assignedProduct", width: 30 },
     { header: "Item Count", key: "itemCount", width: 30 },
     { header: "Total Weight (g)", key: "totalWeight", width: 30 },
